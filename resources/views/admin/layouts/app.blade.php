@@ -175,6 +175,14 @@
                                 <i class="bi bi-clock"></i> Jadwal Salat
                             </a>
                         </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-white {{ request()->routeIs('admin.pengurus.*') ? 'active' : '' }}" 
+                            href="{{ route('admin.pengurus.index') }}">
+                                <i class="bi bi-people-fill me-2"></i>
+                                Pengurus Masjid
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-white {{ request()->routeIs('admin.donations.*') ? 'active' : '' }}" 

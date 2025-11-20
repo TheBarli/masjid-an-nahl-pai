@@ -5,29 +5,38 @@ use App\Http\Controllers\Admin\ActivityAdminController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\GalleryAdminController;
 use App\Http\Controllers\Admin\DonationAdminController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MasjidProfileAdminController;
 use App\Http\Controllers\Admin\PrayerTimeAdminController;
+use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Admin Routes (Protected by Auth)
+|--------------------------------------------------------------------------
+*/
 
-// Admin routes with auth middleware
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-    // Activities Management
+    // Activities
     Route::resource('activities', ActivityAdminController::class);
     
-    // News Management
+    // News
     Route::resource('news', NewsAdminController::class);
     
-    // Gallery Management
+    // Gallery
     Route::resource('galleries', GalleryAdminController::class);
     
-    // Donation Accounts Management
+    // Donation
     Route::resource('donations', DonationAdminController::class);
 
-    // Prayers Management 
+    // Jadwal Sholat
     Route::post('prayers/refresh', [PrayerTimeAdminController::class, 'refresh'])->name('prayers.refresh');
     Route::resource('prayers', PrayerTimeAdminController::class);
+
+    // Profil Masjid
+    Route::get('profile/edit', [MasjidProfileAdminController::class, 'edit'])->name('profile.edit');
+    Route::post('profile/update', [MasjidProfileAdminController::class, 'update'])->name('profile.update');
 });
