@@ -3,12 +3,11 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrayerTimeController;
-use App\Http\Controllers\Admin\ScheduleAdminController;
 use App\Models\PrayerTime;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes - Public
 |--------------------------------------------------------------------------
 */
 
@@ -22,18 +21,20 @@ Route::get('/berita/{id}', [HomeController::class, 'beritaDetail'])->name('berit
 Route::get('/galeri', [HomeController::class, 'galeri'])->name('galeri');
 Route::get('/donasi', [HomeController::class, 'donasi'])->name('donasi');
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('schedules', ScheduleAdminController::class)->except(['show']);
-});
+// Jadwal sholat untuk user
+Route::get('/jadwal-sholat', [HomeController::class, 'jadwal'])->name('jadwal.sholat');
 
-Route::get('/jadwal-sholat', [ScheduleAdminController::class, 'getPrayerTimes'])->name('jadwal.sholat');
-
-Route::get('/jadwal', [PrayerTimeController::class, 'index'])->name('jadwal'); // default
+Route::get('/jadwal', [PrayerTimeController::class, 'index'])->name('jadwal'); 
 Route::get('/jadwal-dark', [PrayerTimeController::class, 'index'])->name('jadwal.dark');
 Route::get('/jadwal-swipe', [PrayerTimeController::class, 'index'])->name('jadwal.swipe');
 Route::get('/jadwal-islami', [PrayerTimeController::class, 'index'])->name('jadwal.islami');
-// Authentication Routes
+
+// Authentication
 require __DIR__.'/auth.php';
 
-// Admin Routes (protected by auth middleware)
+/*
+|--------------------------------------------------------------------------
+| Admin Routes - LOAD SEMUA dari admin.php
+|--------------------------------------------------------------------------
+*/
 require __DIR__.'/admin.php';

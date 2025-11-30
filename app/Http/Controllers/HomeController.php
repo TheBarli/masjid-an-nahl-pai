@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Gallery;
 use App\Models\DonationAccount;
 use App\Models\PrayerTime;
+use App\Models\MasjidProfile;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,10 @@ class HomeController extends Controller
     // Profil page
     public function profil()
     {
-        return view('profil');
+        $profile = MasjidProfile::first();
+        $pengurus = \App\Models\Pengurus::orderBy('urutan', 'asc')->get(); // TAMBAH BARIS INI
+
+        return view('profil', compact('profile', 'pengurus')); // UPDATE INI
     }
 
     // Jadwal Sholat page
