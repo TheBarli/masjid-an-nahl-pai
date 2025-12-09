@@ -32,44 +32,68 @@
 
     <div class="card shadow-sm border-0">
         <div class="card-body p-4">
-            <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
+
+            <!-- Tentang Masjid -->
+            <form action="{{ route('admin.profile.update.tentang') }}" method="POST">
                 @csrf
-
-                <!-- Tentang Masjid -->
                 @include('admin.profile.parts.tentang')
-
-                <!-- Divider -->
-                <div class="border-top my-5"></div>
-
-                <!-- Visi & Misi -->
-                @include('admin.profile.parts.visimisi')
-
-                <!-- Divider -->
-                <div class="border-top my-5"></div>
-
-                <!-- Statistik Masjid -->
-                @include('admin.profile.parts.statistik')
-
-                <!-- Divider -->
-                <div class="border-top my-5"></div>
-
-                <!-- Kontak -->
-                @include('admin.profile.parts.kontak')
-
-                <!-- Divider -->
-                <div class="border-top my-5"></div>
-
-                <!-- Lokasi & Maps -->
-                @include('admin.profile.parts.lokasi')
-
-                <!-- Divider -->
-                <div class="border-top my-5"></div>
-
-                <!-- Fasilitas -->
-                @include('admin.profile.parts.fasilitas')
-
-                <!-- Submit Button -->
                 @include('admin.profile.parts.submit')
+
+            </form>
+
+            <!-- Divider -->
+            <div class="border-top my-5"></div>
+
+            <!-- Visi & Misi -->
+            <form action="{{ route('admin.profile.update.visimisi') }}" method="POST">
+                @csrf
+                @include('admin.profile.parts.visimisi')
+                @include('admin.profile.parts.submit')
+
+            </form>
+
+            <!-- Divider -->
+            <div class="border-top my-5"></div>
+
+            <!-- Statistik Masjid -->
+            <form action="{{ route('admin.profile.update.statistik') }}" method="POST">
+                @csrf
+                @include('admin.profile.parts.statistik')
+                @include('admin.profile.parts.submit')
+
+            </form>
+
+            <!-- Divider -->
+            <div class="border-top my-5"></div>
+
+            <!-- Kontak -->
+            <form action="{{ route('admin.profile.update.kontak') }}" method="POST">
+                @csrf
+                @include('admin.profile.parts.kontak')
+                @include('admin.profile.parts.submit')
+
+            </form>
+
+            <!-- Divider -->
+            <div class="border-top my-5"></div>
+
+            <!-- Lokasi & Maps -->
+            <form action="{{ route('admin.profile.update.lokasi') }}" method="POST">
+                @csrf
+                @include('admin.profile.parts.lokasi')
+                @include('admin.profile.parts.submit')
+
+            </form>
+
+            <!-- Divider -->
+            <div class="border-top my-5"></div>
+
+            <!-- Fasilitas -->
+            <form action="{{ route('admin.profile.update.fasilitas') }}" method="POST" id="facilities-form">
+                @csrf
+                @include('admin.profile.parts.fasilitas')
+                @include('admin.profile.parts.submit')
+
             </form>
         </div>
     </div>

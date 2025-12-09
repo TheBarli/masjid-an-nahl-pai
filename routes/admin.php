@@ -40,13 +40,17 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Profil Masjid
     Route::prefix('profile')->name('profile.')->group(function () {
-        Route::get('/', [ProfileController::class, 'edit'])->name('edit');
+        Route::get('/', [ProfileController::class, 'index'])->name('index');
+        Route::get('/edit', [ProfileController::class, 'edit'])->name('edit');
 
-        Route::post('/update/informasi', [ProfileController::class, 'updateInformasi'])->name('update.informasi');
+
+        Route::post('/update/statistik', [ProfileController::class, 'updateStatistik'])->name('update.statistik');
         Route::post('/update/tentang', [ProfileController::class, 'updateTentang'])->name('update.tentang');
         Route::post('/update/visimisi', [ProfileController::class, 'updateVisiMisi'])->name('update.visimisi');
         Route::post('/update/lokasi', [ProfileController::class, 'updateLokasi'])->name('update.lokasi');
         Route::post('/update/fasilitas', [ProfileController::class, 'updateFasilitas'])->name('update.fasilitas');
+        Route::post('/update/kontak', [ProfileController::class, 'updateKontak'])->name('update.kontak');
+
     });
 
 

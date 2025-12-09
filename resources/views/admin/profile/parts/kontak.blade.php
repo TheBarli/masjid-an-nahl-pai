@@ -11,8 +11,9 @@
             Nomor WhatsApp
             <span class="text-danger">*</span>
         </label>
-        <input type="text" name="whatsapp" id="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror"
-            value="{{ old('whatsapp', $profile->whatsapp ?? '') }}" placeholder="Contoh: 6281234567890" required>
+        <input type="text" name="whatsapp" id="whatsapp" pattern="[0-9]+"
+            class="form-control @error('whatsapp') is-invalid @enderror"
+            value="{{ old('whatsapp', $profile->whatsapp ?? '') }}" required>
         @error('whatsapp')
             <div class="invalid-feedback d-block">{{ $message }}</div>
         @enderror

@@ -11,6 +11,7 @@ use App\Models\PrayerTime;
 |--------------------------------------------------------------------------
 */
 
+
 // Public Routes - Website Masjid
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profil', [HomeController::class, 'profil'])->name('profil');
@@ -28,6 +29,8 @@ Route::get('/jadwal', [PrayerTimeController::class, 'index'])->name('jadwal');
 Route::get('/jadwal-dark', [PrayerTimeController::class, 'index'])->name('jadwal.dark');
 Route::get('/jadwal-swipe', [PrayerTimeController::class, 'index'])->name('jadwal.swipe');
 Route::get('/jadwal-islami', [PrayerTimeController::class, 'index'])->name('jadwal.islami');
+
+
 
 // Authentication
 require __DIR__ . '/auth.php';

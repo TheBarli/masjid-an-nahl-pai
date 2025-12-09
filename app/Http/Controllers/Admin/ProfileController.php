@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Profile;
+use App\Models\MasjidProfile as Profile;
 
 class ProfileController extends Controller
 {
@@ -80,6 +80,11 @@ class ProfileController extends Controller
 
         return back()->with('success', 'Fasilitas berhasil diperbarui.');
     }
-}
 
-?>
+    public function index()
+    {
+        $profile = Profile::first();
+        return view('admin.profile.index', compact('profile'));
+    }
+
+}
