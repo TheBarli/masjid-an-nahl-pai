@@ -70,7 +70,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="col-md-6 mb-3">
+                <!-- <div class="col-md-6 mb-3">
                     <label for="image" class="form-label">Gambar</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
                         accept="image/*">
@@ -78,7 +78,7 @@
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div>
+                </div> -->
 
                 <hr>
 

@@ -131,7 +131,7 @@
             <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse" id="sidebarMenu">
                 <div class="position-sticky pt-3">
                     <div class="text-center mb-4">
-                        <img src="https://kompaspedia.kompas.id/wp-content/uploads/2021/07/Logo-Universitas-Sultan-Ageng-Tirtayasa_thumb.png" 
+                        <img src="{{ asset('storage/gambar/logoMasjid.png') }}" 
                              alt="Logo" width="75" height="50" class="rounded-circle mb-2">
                         <h6 class="text-white">Admin Panel</h6>
                         <p class="text-black small mb-0">{{ Auth::user()->name ?? 'Admin' }}</p>

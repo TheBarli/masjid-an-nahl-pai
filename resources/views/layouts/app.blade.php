@@ -170,7 +170,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-                <img src="https://kompaspedia.kompas.id/wp-content/uploads/2021/07/Logo-Universitas-Sultan-Ageng-Tirtayasa_thumb.png" 
+                <img src="{{ asset('storage/gambar/logoMasjid.png') }}" 
                      alt="Logo" width="65" height="40" class="rounded-circle me-2">
                 <span class="fw-bold">Masjid An Nahl</span>
             </a>
@@ -232,7 +232,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img src="https://kompaspedia.kompas.id/wp-content/uploads/2021/07/Logo-Universitas-Sultan-Ageng-Tirtayasa_thumb.png" 
+                        <img src="{{ asset('storage/gambar/logoMasjid.png') }}" 
                              alt="Logo" width="65" height="40" class="rounded-circle me-2">
                         <h5 class="text-white mb-0">Masjid An Nahl</h5>
                     </div>
