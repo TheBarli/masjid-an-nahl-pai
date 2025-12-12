@@ -15,10 +15,10 @@
             <div class="carousel-item active">
                 <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz1vQC_MFp5wQXqmjVa9Bvz82pqGf9ry0EiZdMuoDYuypKH8u5hnzK6U5w3nJDGBlnvNE9nOEb461SuXG5poB88oNp9w-iUU6q9iY3vbL3yHsJmw58XWllaifBmp5GDju8quI-k=s1360-w1360-h1020-rw" class="d-block w-100"
                     alt="Masjid 1">
-                <div class="carousel-caption">
-                    <h1 class="display-4 fw-bold">Assalamu'alaikum – Selamat Datang</h1>
-                    <p class="lead">Website resmi masjid: informasi jadwal sholat, kegiatan, dan layanan jamaah.</p>
-                    <div class="mt-4">
+                <div class="carousel-caption px-2 px-sm-3 px-md-4">
+                    <h1 class="display-6 display-md-4 display-lg-3 fw-bold">Assalamu'alaikum – Selamat Datang</h1>
+                    <p class="lead d-none d-sm-block">Website resmi masjid: informasi jadwal sholat, kegiatan, dan layanan jamaah.</p>
+                    <div class="mt-3 mt-md-4">
                         <a href="{{ route('jadwal') }}" class="btn btn-emerald me-2">
                             <i class="bi bi-clock"></i> Lihat Jadwal Sholat
                         </a>
